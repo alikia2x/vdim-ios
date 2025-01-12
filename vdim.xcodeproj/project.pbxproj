@@ -10,9 +10,22 @@
 		C46FC4452D2A7AD900007D89 /* vdim.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = vdim.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		C46D98532D3398830084E738 /* Exceptions for "vdim" folder in "vdim" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = C46FC4442D2A7AD900007D89 /* vdim */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		C46FC4472D2A7AD900007D89 /* vdim */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				C46D98532D3398830084E738 /* Exceptions for "vdim" folder in "vdim" target */,
+			);
 			path = vdim;
 			sourceTree = "<group>";
 		};
@@ -255,6 +268,7 @@
 				DEVELOPMENT_TEAM = 644FU9Z647;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = vdim/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "V次元";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.social-networking";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -288,6 +302,7 @@
 				DEVELOPMENT_TEAM = 644FU9Z647;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = vdim/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "V次元";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.social-networking";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
