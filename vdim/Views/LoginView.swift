@@ -5,6 +5,8 @@ enum AuthState {
     case register
 }
 
+let screenSize = UIScreen.main.bounds
+
 private struct GradientTitle: View {
     var text: String
     var fontSize: CGFloat
@@ -54,7 +56,7 @@ private struct LoginRegisterSwitcher: View {
     @Binding var currentState: AuthState
 
     var body: some View {
-        HStack(alignment: .bottom) {
+        HStack(alignment: .bottom, spacing: 12) {
             Text("登录")
                 .font(
                     currentState == .login
@@ -86,43 +88,89 @@ private struct LoginRegisterSwitcher: View {
     }
 }
 
+private struct LoginForm: View {
+    @Binding var username: String
+
+    var body: some View {
+        VStack(alignment: .leading) {
+            Text("用户名")
+                .padding(.leading, 24)
+            TextField("输入用户名", text: $username)
+                .padding(12)
+                .background(RoundedRectangle(cornerRadius: 8).fill(Color(.loginFormTextFieldBackground)))
+                .padding([.leading, .trailing], 24)
+                .foregroundColor(Color(.loginFormTextFieldPlaceholder))
+        }
+        .padding(.top, 8)
+    }
+}
+
+private struct Background: View {
+    var body: some View {
+        Color.black
+            .edgesIgnoringSafeArea(.all)
+        Image("LoginBackground")
+            .resizable()
+            .aspectRatio(contentMode: .fill)
+            .frame(width: screenSize.width * 1.4)
+            .offset(y: -50)
+            .opacity(0.56)
+    }
+}
+
+struct MainFrame: View {
+    @Binding var username: String
+    @Binding var currentAction: AuthState
+    
+    var body: some View {
+        VStack(alignment: .leading) {
+            LoginRegisterSwitcher(currentState: $currentAction)
+                .padding(.top, 24)
+                .padding(.leading, 12)
+            
+            LoginForm(username: $username)
+            
+            Spacer()
+        }
+        .frame(width: screenSize.width - 48, height: screenSize.height > 700 ? 440 : 400 )
+        .background(
+            .thinMaterial, in: RoundedRectangle(cornerRadius: 13)
+        )
+        .padding(.top, 16)
+    }
+}
+
+func getContentPadding() -> EdgeInsets {
+    let screenSize = screenSize
+    let width = min(screenSize.width, screenSize.height)
+
+    switch width {
+    case 0..<400:
+        return EdgeInsets(top: 180, leading: 48, bottom: 0, trailing: 0)
+    case 400..<440:
+        return EdgeInsets(top: 250, leading: 48, bottom: 0, trailing: 0)
+    default:
+        return EdgeInsets(top: 300, leading: 48, bottom: 0, trailing: 0)
+    }
+}
+
 struct LoginView: View {
-    @State private var currentState: AuthState = .login
+    @State private var currentAction: AuthState = .login
+    @State private var username: String = ""
 
     var body: some View {
         ZStack {
-            Color.black
-                .edgesIgnoringSafeArea(.all)
-
-            Image("LoginBackground")
-                .resizable()
-                .aspectRatio(contentMode: .fill)
-                .frame(width: UIScreen.main.bounds.width * 1.4)
-                .offset(y: -50)
-                .opacity(0.56)
-
+            Background()
+            
             VStack(alignment: .leading, spacing: 8) {
                 Title()
-                // 为什么这里的alignment不生效
-                VStack(alignment: .leading) {
-                    LoginRegisterSwitcher(currentState: $currentState)
-                        .padding(.top, 24)
-                        .padding(.leading, 12)
-                    Spacer()
-                }
-                .frame(width: UIScreen.main.bounds.width - 48, height: 480)
-                .background(
-                    .thinMaterial, in: RoundedRectangle(cornerRadius: 13)
-                )
-                .padding(.top, 16)
-
+                MainFrame(username: $username, currentAction: $currentAction)
             }
             .frame(
-                maxWidth: UIScreen.main.bounds.width,
-                maxHeight: UIScreen.main.bounds.height, alignment: .topLeading
+                maxWidth: screenSize.width,
+                maxHeight: screenSize.height, alignment: .topLeading
             )
-            .padding(.top, 250)
-            .padding(.leading, 48)
+            .padding(getContentPadding())
         }
     }
 }
@@ -133,23 +181,51 @@ struct Login_Previews: PreviewProvider {
     }
 }
 
+
 extension Color {
-    init?(hex: String) {
+    init(hex: String) {
+        @Environment(\.colorScheme) var colorScheme
         var hexSanitized = hex.trimmingCharacters(in: .whitespacesAndNewlines)
         if hexSanitized.hasPrefix("#") {
             hexSanitized.remove(at: hexSanitized.startIndex)
         }
-
-        var rgb: UInt64 = 0
-        let scanner = Scanner(string: hexSanitized)
-        guard scanner.scanHexInt64(&rgb) else {
-            return nil  // 如果扫描失败，返回 nil
+        
+        var r: Double = 0
+        var g: Double = 0
+        var b: Double = 0
+        var a: Double = 1.0
+        
+        switch hexSanitized.count {
+        case 3:
+            if let rgb = UInt64(hexSanitized, radix: 16) {
+                r = Double((rgb >> 8) & 0xF) / 15.0
+                g = Double((rgb >> 4) & 0xF) / 15.0
+                b = Double(rgb & 0xF) / 15.0
+            }
+        case 4:
+            if let rgba = UInt64(hexSanitized, radix: 16) {
+                r = Double((rgba >> 12) & 0xF) / 15.0
+                g = Double((rgba >> 8) & 0xF) / 15.0
+                b = Double((rgba >> 4) & 0xF) / 15.0
+                a = Double(rgba & 0xF) / 15.0
+            }
+        case 6:
+            if let rgb = UInt64(hexSanitized, radix: 16) {
+                r = Double((rgb >> 16) & 0xFF) / 255.0
+                g = Double((rgb >> 8) & 0xFF) / 255.0
+                b = Double(rgb & 0xFF) / 255.0
+            }
+        case 8:
+            if let rgba = UInt64(hexSanitized, radix: 16) {
+                r = Double((rgba >> 24) & 0xFF) / 255.0
+                g = Double((rgba >> 16) & 0xFF) / 255.0
+                b = Double((rgba >> 8) & 0xFF) / 255.0
+                a = Double(rgba & 0xFF) / 255.0
+            }
+        default:
+            break
         }
-
-        let r = Double((rgb >> 16) & 0xFF) / 255.0
-        let g = Double((rgb >> 8) & 0xFF) / 255.0
-        let b = Double(rgb & 0xFF) / 255.0
-
-        self.init(red: r, green: g, blue: b)
+        
+        self.init(red: r, green: g, blue: b, opacity: a)
     }
 }
