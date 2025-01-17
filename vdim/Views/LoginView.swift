@@ -88,7 +88,8 @@ private struct LoginRegisterSwitcher: View {
 
 struct LoginView: View {
     @State private var currentState: AuthState = .login
-
+    @State private var username: String=""
+    @State private var secretcode:String=""
     var body: some View {
         ZStack {
             Color.black
@@ -108,6 +109,17 @@ struct LoginView: View {
                     LoginRegisterSwitcher(currentState: $currentState)
                         .padding(.top, 24)
                         .padding(.leading, 12)
+                    TextField(text: $username){
+                        Text("用户名")
+                    }
+                    .textFieldStyle(.roundedBorder)
+                    .padding()
+                    Spacer()
+                    TextField(text: $secretcode){
+                        Text("密码")
+                    }
+                    .textFieldStyle(.roundedBorder)
+                    .padding()
                     Spacer()
                 }
                 .frame(width: UIScreen.main.bounds.width - 48, height: 480)
@@ -153,3 +165,4 @@ extension Color {
         self.init(red: r, green: g, blue: b)
     }
 }
+
