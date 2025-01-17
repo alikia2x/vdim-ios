@@ -69,6 +69,7 @@ private struct LoginRegisterSwitcher: View {
                 .onTapGesture {
                     currentState = .login
                 }
+                .animation(.spring(duration: 0.2), value: UUID())
 
             Text("注册")
                 .font(
@@ -82,6 +83,9 @@ private struct LoginRegisterSwitcher: View {
                 .onTapGesture {
                     currentState = .register
                 }
+                .animation(.spring(duration: 0.2), value: UUID())
+                
+            
             Spacer()
         }
         .padding(.leading, 12)
@@ -90,16 +94,26 @@ private struct LoginRegisterSwitcher: View {
 
 private struct LoginForm: View {
     @Binding var username: String
+    @Binding var password: String
 
     var body: some View {
         VStack(alignment: .leading) {
             Text("用户名")
                 .padding(.leading, 24)
-            TextField("输入用户名", text: $username)
+            TextField("", text: $username, prompt: Text("输入用户名").foregroundColor(Color(.loginFormTextFieldPlaceholder)))
                 .padding(12)
                 .background(RoundedRectangle(cornerRadius: 8).fill(Color(.loginFormTextFieldBackground)))
                 .padding([.leading, .trailing], 24)
-                .foregroundColor(Color(.loginFormTextFieldPlaceholder))
+                .autocorrectionDisabled()
+            
+            Text("密码")
+                .padding(.leading, 24)
+                .padding(.top, 24)
+            SecureField("", text: $password, prompt: Text("输入密码").foregroundColor(Color(.loginFormTextFieldPlaceholder)))
+                .padding(12)
+                .background(RoundedRectangle(cornerRadius: 8).fill(Color(.loginFormTextFieldBackground)))
+                .padding([.leading, .trailing], 24)
+                .autocorrectionDisabled()
         }
         .padding(.top, 8)
     }
@@ -120,6 +134,7 @@ private struct Background: View {
 
 struct MainFrame: View {
     @Binding var username: String
+    @Binding var password: String
     @Binding var currentAction: AuthState
     
     var body: some View {
@@ -128,7 +143,7 @@ struct MainFrame: View {
                 .padding(.top, 24)
                 .padding(.leading, 12)
             
-            LoginForm(username: $username)
+            LoginForm(username: $username, password: $password)
             
             Spacer()
         }
@@ -145,9 +160,9 @@ func getContentPadding() -> EdgeInsets {
     let width = min(screenSize.width, screenSize.height)
 
     switch width {
-    case 0..<400:
+    case 0..<380:
         return EdgeInsets(top: 180, leading: 48, bottom: 0, trailing: 0)
-    case 400..<440:
+    case 380..<440:
         return EdgeInsets(top: 250, leading: 48, bottom: 0, trailing: 0)
     default:
         return EdgeInsets(top: 300, leading: 48, bottom: 0, trailing: 0)
@@ -157,6 +172,7 @@ func getContentPadding() -> EdgeInsets {
 struct LoginView: View {
     @State private var currentAction: AuthState = .login
     @State private var username: String = ""
+    @State private var password: String = ""
 
     var body: some View {
         ZStack {
@@ -164,7 +180,7 @@ struct LoginView: View {
             
             VStack(alignment: .leading, spacing: 8) {
                 Title()
-                MainFrame(username: $username, currentAction: $currentAction)
+                MainFrame(username: $username, password: $password, currentAction: $currentAction)
             }
             .frame(
                 maxWidth: screenSize.width,
