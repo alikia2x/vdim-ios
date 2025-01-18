@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		C47B31B62D3AD6E000D623E7 /* zxcvbn in Frameworks */ = {isa = PBXBuildFile; productRef = C47B31B52D3AD6E000D623E7 /* zxcvbn */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		C46FC4452D2A7AD900007D89 /* vdim.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = vdim.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -36,6 +40,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C47B31B62D3AD6E000D623E7 /* zxcvbn in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +83,7 @@
 			);
 			name = vdim;
 			packageProductDependencies = (
+				C47B31B52D3AD6E000D623E7 /* zxcvbn */,
 			);
 			productName = vdim;
 			productReference = C46FC4452D2A7AD900007D89 /* vdim.app */;
@@ -106,6 +112,9 @@
 			);
 			mainGroup = C46FC43C2D2A7AD900007D89;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				C47B31B42D3AD6DF00D623E7 /* XCRemoteSwiftPackageReference "zxcvbn-swift" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = C46FC4462D2A7AD900007D89 /* Products */;
 			projectDirPath = "";
@@ -277,7 +286,7 @@
 				INFOPLIST_KEY_UIStatusBarHidden = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -313,7 +322,7 @@
 				INFOPLIST_KEY_UIStatusBarHidden = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -350,6 +359,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C47B31B42D3AD6DF00D623E7 /* XCRemoteSwiftPackageReference "zxcvbn-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/DeVitoC/zxcvbn-swift";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C47B31B52D3AD6E000D623E7 /* zxcvbn */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C47B31B42D3AD6DF00D623E7 /* XCRemoteSwiftPackageReference "zxcvbn-swift" */;
+			productName = zxcvbn;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = C46FC43D2D2A7AD900007D89 /* Project object */;
 }

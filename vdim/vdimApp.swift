@@ -9,9 +9,11 @@ import SwiftUI
 
 @main
 struct vdimApp: App {
+    @StateObject var userAuthState = UserAuthState()
     var body: some Scene {
         WindowGroup {
             LoginView()
+                .environmentObject(userAuthState)
         }
     }
 }
