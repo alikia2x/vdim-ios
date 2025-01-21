@@ -9,12 +9,39 @@ import Moya
 import Foundation
 
 enum VDimService {
-    case getThreads(page: Int = 1)
-    case getThread(tid: Int)
+    case getThreads(page: Int = 1, useMock: Bool)
+    case getThread(tid: Int, useMock: Bool)
 }
 
-extension VDimService: TargetType {
-    var baseURL: URL { return URL(string: "https://api.lty.fan")! }
+enum ServerEnvironment {
+    case real
+    case mock
+}
+
+protocol BaseTargetType: TargetType {
+    var environment: ServerEnvironment { get }
+}
+
+extension BaseTargetType {
+    var baseURL: URL {
+        switch environment {
+        case .real:
+            return URL(string: "https://api.lty.fan")!
+        case .mock:
+            return URL(string: "https://apifoxmock.com/m1/5782624-5466975-default/v1")!
+        }
+    }
+}
+
+extension VDimService: BaseTargetType {
+    var environment: ServerEnvironment {
+        switch self {
+        case .getThreads(_, let useMock):
+            return useMock ? .mock : .real
+        case .getThread(_, let useMock):
+            return useMock ? .mock : .real
+        }
+    }
     
     var path: String {
         switch self {
@@ -24,7 +51,7 @@ extension VDimService: TargetType {
             return "/posts"
         }
     }
-    
+
     var method: Moya.Method {
         switch self {
         case .getThreads:
@@ -33,36 +60,18 @@ extension VDimService: TargetType {
             return .get
         }
     }
-    
+
     var task: Task {
         switch self {
-        case let .getThread(tid):
+        case let .getThread(tid, _):
             return .requestParameters(parameters: ["tid": tid], encoding: URLEncoding.queryString)
-        case let .getThreads(page):
+        case let .getThreads(page, _):
             return .requestParameters(parameters: ["page": page], encoding: URLEncoding.queryString)
         }
     }
-    
-    var sampleData: Data {
-        switch self {
-        case .getThread(let id):
-            guard let url = Bundle.main.url(forResource: "accounts", withExtension: "json"),
-                let data = try? Data(contentsOf: url) else {
-                    return Data()
-            }
-            return data
-        case .getThreads(let page):
-            guard let url = Bundle.main.url(forResource: "accounts", withExtension: "json"),
-                let data = try? Data(contentsOf: url) else {
-                    return Data()
-            }
-            return data
-        }
-    }
-    
-    
+
     var headers: [String: String]? {
-        return nil
+        nil
     }
-    
+
 }

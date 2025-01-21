@@ -12,8 +12,9 @@ struct vdimApp: App {
     @StateObject var userAuthState = UserAuthState()
     var body: some Scene {
         WindowGroup {
-            LoginView()
-                .environmentObject(userAuthState)
+//            LoginView()
+//                .environmentObject(userAuthState)
+            ContentView()
         }
     }
 }

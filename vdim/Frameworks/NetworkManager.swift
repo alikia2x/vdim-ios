@@ -9,66 +9,42 @@ import Moya
 import Combine
 import Foundation
 
-struct Thread: Codable, Identifiable {
-    let tid: Int
-    let fid: Int
-    let posttableid: Int
-    let typeid: Int
-    let sortid: Int
-    let readperm: Int
-    let price: Int
-    let author: String
-    let authorid: Int
-    let subject: String
-    let dateline: TimeInterval
-    let lastpost: TimeInterval
-    let lastposter: String
-    let views: Int
-    let replies: Int
-    let displayorder: Bool
-    let highlight: Bool
-    let digest: Bool
-    let rate: Bool
-    let special: Bool
-    let attachment: Bool
-    let moderated: Bool
-    let closed: Int
-    let stickreply: Bool
-    let recommends: Int
-    let recommend_add: Int
-    let recommend_sub: Int
-    let heats: Int
-    let status: Int
-    let isgroup: Bool
-    let favtimes: Int
-    let sharetimes: Int
-    let stamp: Int
-    let icon: Int
-    let pushedaid: Int
-    let cover: Int
-    let replycredit: Int
-    let relatebytag: String
-    let maxposition: Int
-    let bgcolor: String
-    let comments: Int
-    let hidden: Int
+struct Post: Codable, Identifiable {
+    let id: Int                 // 帖子ID，tid
+    let author: UserLite        // 作者
+    let content: String         // 帖子内容
+    let createdAt: Int          // 创建时间，dateline
+    let ipLocation: String      // IP属地
+    let likes: Int              // 点赞量，recommends
+    let replies: Int            // 评论量
+    let tags: [Tag]             // 标签，若无则为空数组
+    let title: String           // 帖子标题，subject
+    let updatedAt: Int?         // 修改时间，若无编辑则为NULL
+    let views: Int              // 浏览量
+}
 
-    var id: Int {
-        return tid
-    }
+struct Tag: Codable {
+    let id: Int                 // 标签 ID
+    let name: String            // 标签内容
+}
+
+struct UserLite: Codable {
+    let id: Int                 // uid
+    let avatar: String          // 头像 URL
+    let name: String            // 用户名
+    let signature: String?      // 签名
 }
 
 class NetworkManager: ObservableObject {
     private var provider = MoyaProvider<VDimService>()
-    @Published var threads: [Thread] = []
+    @Published var threads: [Post] = []
 
     func fetchThreads(page: Int = 1) {
-        print("Hello")
-        provider.request(.getThreads(page: page)) { result in
+        provider.request(.getThreads(page: page, useMock: true)) { result in
             switch result {
             case let .success(response):
                 do {
-                    let threads = try JSONDecoder().decode([Thread].self, from: response.data)
+                    let threads = try JSONDecoder().decode([Post].self, from: response.data)
                     DispatchQueue.main.async {
                         self.threads = threads
                     }

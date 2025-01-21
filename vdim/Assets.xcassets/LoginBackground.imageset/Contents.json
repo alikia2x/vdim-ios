@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "120447736_p0 2.png",
+      "filename" : "LoginBackground@1x.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "120447736_p0 1.png",
+      "filename" : "LoginBackground@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "120447736_p0.png",
+      "filename" : "LoginBackground@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

@@ -12,7 +12,7 @@ struct Timeline: View {
     var body: some View {
         VStack {
             ForEach(networkManager.threads, id: \.id) { thread in
-                Text(thread.subject)
+                Text(thread.title)
             }
         }
         .onAppear {
