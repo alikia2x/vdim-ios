@@ -9,11 +9,18 @@ import SwiftUI
 
 struct RegisterStep1: View {
     @EnvironmentObject var userAuth: UserAuthState
+    
+    func verify() {
+        
+    }
 
     var body: some View {
         VStack(alignment: .leading) {
             LoginFormBasicInput(
-                type: .username, title: "用户名", prompt: "取一个好听的名字吧…")
+                type: .username,
+                title: "用户名",
+                prompt: "取一个好听的名字吧…"
+            )
 
             LoginFormPasswordInput(register: true)
 
@@ -22,7 +29,7 @@ struct RegisterStep1: View {
             Button(action: {
                 userAuth.action += 1
             }) {
-                Text("注册")
+                Text("下一步 (1/4)")
                     .font(.title3)
                     .frame(maxWidth: .infinity, maxHeight: 28)
             }
@@ -63,78 +70,6 @@ struct RegisterStep2: View {
 struct RegisterForm_Previews: PreviewProvider {
     static var previews: some View {
         LoginView()
-            .environmentObject(UserAuthState())
-    }
-}
-
-struct LoginFormPasswordInput: View {
-    @EnvironmentObject var userAuth: UserAuthState
-    let register: Bool
-    var body: some View {
-        Text("密码")
-            .padding(.leading, 24)
-            .padding(.top, 16)
-        PasswordInput(password: $userAuth.password, showStrength: register)
-    }
-}
-
-enum LoginFormInputType {
-    case username
-    case email
-    case TFACode
-}
-
-struct LoginFormBasicInput: View {
-    @EnvironmentObject var userAuth: UserAuthState
-    let type: LoginFormInputType
-    let title: String
-    let prompt: String
-    var body: some View {
-        VStack(alignment: .leading) {
-            Text(title)
-                .padding(.leading, 24)
-            switch type {
-            case .email:
-                TextField(
-                    "", text: $userAuth.email,
-                    prompt: Text(prompt).foregroundColor(
-                        Color(.loginFormTextFieldPlaceholder))
-                )
-                .padding(12)
-                .background(
-                    RoundedRectangle(cornerRadius: 8).fill(
-                        Color(.loginFormTextFieldBackground))
-                )
-                .padding([.leading, .trailing], 24)
-                .autocorrectionDisabled()
-            case .username:
-                TextField(
-                    "", text: $userAuth.username,
-                    prompt: Text(prompt).foregroundColor(
-                        Color(.loginFormTextFieldPlaceholder))
-                )
-                .padding(12)
-                .background(
-                    RoundedRectangle(cornerRadius: 8).fill(
-                        Color(.loginFormTextFieldBackground))
-                )
-                .padding([.leading, .trailing], 24)
-                .autocorrectionDisabled()
-            default:
-                TextField(
-                    "", text: $userAuth.username,
-                    prompt: Text(prompt).foregroundColor(
-                        Color(.loginFormTextFieldPlaceholder))
-                )
-                .padding(12)
-                .background(
-                    RoundedRectangle(cornerRadius: 8).fill(
-                        Color(.loginFormTextFieldBackground))
-                )
-                .padding([.leading, .trailing], 24)
-                .autocorrectionDisabled()
-            }
-        }
-
+            .environmentObject(UserAuthState(action: 2))
     }
 }

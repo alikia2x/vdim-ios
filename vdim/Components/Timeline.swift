@@ -8,9 +8,15 @@
 import SwiftUI
 
 struct Timeline: View {
+    @StateObject private var networkManager = NetworkManager()
     var body: some View {
         VStack {
-            
+            ForEach(networkManager.threads, id: \.id) { thread in
+                Text(thread.subject)
+            }
+        }
+        .onAppear {
+            networkManager.fetchThreads()
         }
     }
 }

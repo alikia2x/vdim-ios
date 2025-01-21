@@ -48,3 +48,11 @@ struct LoginForm: View {
        .padding(.top, 8)
    }
 }
+
+struct LoginForm_Previews: PreviewProvider {
+    static var previews: some View {
+        LoginView()
+            .environmentObject(UserAuthState())
+    }
+}
+

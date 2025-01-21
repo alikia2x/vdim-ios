@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C47B31B62D3AD6E000D623E7 /* zxcvbn in Frameworks */ = {isa = PBXBuildFile; productRef = C47B31B52D3AD6E000D623E7 /* zxcvbn */; };
+		C4F554652D3D115F001B4A15 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = C4F554642D3D115F001B4A15 /* Moya */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4F554652D3D115F001B4A15 /* Moya in Frameworks */,
 				C47B31B62D3AD6E000D623E7 /* zxcvbn in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -84,6 +86,7 @@
 			name = vdim;
 			packageProductDependencies = (
 				C47B31B52D3AD6E000D623E7 /* zxcvbn */,
+				C4F554642D3D115F001B4A15 /* Moya */,
 			);
 			productName = vdim;
 			productReference = C46FC4452D2A7AD900007D89 /* vdim.app */;
@@ -114,6 +117,7 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				C47B31B42D3AD6DF00D623E7 /* XCRemoteSwiftPackageReference "zxcvbn-swift" */,
+				C499C3752D3BC444001629BB /* XCRemoteSwiftPackageReference "Moya" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = C46FC4462D2A7AD900007D89 /* Products */;
@@ -295,9 +299,13 @@
 				PRODUCT_BUNDLE_IDENTIFIER = fan.lty.i;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -331,9 +339,13 @@
 				PRODUCT_BUNDLE_IDENTIFIER = fan.lty.i;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -369,6 +381,14 @@
 				kind = branch;
 			};
 		};
+		C499C3752D3BC444001629BB /* XCRemoteSwiftPackageReference "Moya" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Moya/Moya.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 15.0.3;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -376,6 +396,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = C47B31B42D3AD6DF00D623E7 /* XCRemoteSwiftPackageReference "zxcvbn-swift" */;
 			productName = zxcvbn;
+		};
+		C4F554642D3D115F001B4A15 /* Moya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C499C3752D3BC444001629BB /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = Moya;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

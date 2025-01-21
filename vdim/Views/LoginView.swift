@@ -2,12 +2,24 @@ import Combine
 import SwiftUI
 
 class UserAuthState: ObservableObject {
-    @Published var username: String = ""
-    @Published var password: String = ""
-    @Published var phoneNumber: String = ""
-    @Published var TFACode: String = ""
-    @Published var email: String = ""
-    @Published var action: Int = 1
+    @Published var username: String
+    @Published var password: String
+    @Published var phoneNumber: String
+    @Published var TFACode: String
+    @Published var email: String
+    @Published var action: Int
+
+    init(
+        username: String = "", password: String = "", phoneNumber: String = "",
+        TFACode: String = "", email: String = "", action: Int = 1
+    ) {
+        self.username = username
+        self.password = password
+        self.phoneNumber = phoneNumber
+        self.TFACode = TFACode
+        self.email = email
+        self.action = action
+    }
 }
 
 let screenSize = UIScreen.main.bounds
@@ -26,8 +38,6 @@ func getContentPadding() -> EdgeInsets {
     }
 }
 
-
-
 private struct Background: View {
     var body: some View {
         Color.black
@@ -40,7 +50,6 @@ private struct Background: View {
             .opacity(0.56)
     }
 }
-
 
 struct LoginView: View {
     var body: some View {
