@@ -7,36 +7,69 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C43C5C362D42C5CA0026A9AF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C43C5C222D42C5CA0026A9AF /* Preview Assets.xcassets */; };
+		C43C5C372D42C5CA0026A9AF /* thread.json in Resources */ = {isa = PBXBuildFile; fileRef = C43C5C242D42C5CA0026A9AF /* thread.json */; };
+		C43C5C382D42C5CA0026A9AF /* threads.json in Resources */ = {isa = PBXBuildFile; fileRef = C43C5C252D42C5CA0026A9AF /* threads.json */; };
+		C43C5C392D42C5CA0026A9AF /* AlimamaShuHeiTi-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = C43C5C272D42C5CA0026A9AF /* AlimamaShuHeiTi-Bold.otf */; };
+		C43C5C3A2D42C5CA0026A9AF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C43C5C312D42C5CA0026A9AF /* Assets.xcassets */; };
+		C43C5C3C2D42C5CA0026A9AF /* FormInputs.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43C5C102D42C5CA0026A9AF /* FormInputs.swift */; };
+		C43C5C3D2D42C5CA0026A9AF /* LoginContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43C5C112D42C5CA0026A9AF /* LoginContent.swift */; };
+		C43C5C3E2D42C5CA0026A9AF /* LoginForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43C5C122D42C5CA0026A9AF /* LoginForm.swift */; };
+		C43C5C3F2D42C5CA0026A9AF /* PasswordInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43C5C132D42C5CA0026A9AF /* PasswordInput.swift */; };
+		C43C5C402D42C5CA0026A9AF /* RegisterForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43C5C142D42C5CA0026A9AF /* RegisterForm.swift */; };
+		C43C5C412D42C5CA0026A9AF /* Glow.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43C5C162D42C5CA0026A9AF /* Glow.swift */; };
+		C43C5C422D42C5CA0026A9AF /* Timeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43C5C172D42C5CA0026A9AF /* Timeline.swift */; };
+		C43C5C432D42C5CA0026A9AF /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43C5C192D42C5CA0026A9AF /* AppConstants.swift */; };
+		C43C5C452D42C5CA0026A9AF /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43C5C1C2D42C5CA0026A9AF /* ColorExtension.swift */; };
+		C43C5C462D42C5CA0026A9AF /* ModelName.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43C5C1D2D42C5CA0026A9AF /* ModelName.swift */; };
+		C43C5C472D42C5CA0026A9AF /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43C5C1E2D42C5CA0026A9AF /* NetworkManager.swift */; };
+		C43C5C482D42C5CA0026A9AF /* TimeFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43C5C1F2D42C5CA0026A9AF /* TimeFormatter.swift */; };
+		C43C5C492D42C5CA0026A9AF /* VDimService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43C5C202D42C5CA0026A9AF /* VDimService.swift */; };
+		C43C5C4A2D42C5CA0026A9AF /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43C5C292D42C5CA0026A9AF /* HomeView.swift */; };
+		C43C5C4B2D42C5CA0026A9AF /* LoginView .swift in Sources */ = {isa = PBXBuildFile; fileRef = C43C5C2A2D42C5CA0026A9AF /* LoginView .swift */; };
+		C43C5C4C2D42C5CA0026A9AF /* MusicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43C5C2B2D42C5CA0026A9AF /* MusicView.swift */; };
+		C43C5C4D2D42C5CA0026A9AF /* OldHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43C5C2C2D42C5CA0026A9AF /* OldHomeView.swift */; };
+		C43C5C4E2D42C5CA0026A9AF /* PostEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43C5C2D2D42C5CA0026A9AF /* PostEditorView.swift */; };
+		C43C5C4F2D42C5CA0026A9AF /* SectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43C5C2E2D42C5CA0026A9AF /* SectionView.swift */; };
+		C43C5C502D42C5CA0026A9AF /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43C5C2F2D42C5CA0026A9AF /* UserView.swift */; };
+		C43C5C512D42C5CA0026A9AF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43C5C322D42C5CA0026A9AF /* ContentView.swift */; };
+		C43C5C522D42C5CA0026A9AF /* vdimApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43C5C342D42C5CA0026A9AF /* vdimApp.swift */; };
 		C461EBBA2D3FF0850080FAAF /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = C461EBB92D3FF0850080FAAF /* SDWebImageSwiftUI */; };
 		C47B31B62D3AD6E000D623E7 /* zxcvbn in Frameworks */ = {isa = PBXBuildFile; productRef = C47B31B52D3AD6E000D623E7 /* zxcvbn */; };
 		C4F554652D3D115F001B4A15 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = C4F554642D3D115F001B4A15 /* Moya */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C43C5C102D42C5CA0026A9AF /* FormInputs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormInputs.swift; sourceTree = "<group>"; };
+		C43C5C112D42C5CA0026A9AF /* LoginContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginContent.swift; sourceTree = "<group>"; };
+		C43C5C122D42C5CA0026A9AF /* LoginForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginForm.swift; sourceTree = "<group>"; };
+		C43C5C132D42C5CA0026A9AF /* PasswordInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordInput.swift; sourceTree = "<group>"; };
+		C43C5C142D42C5CA0026A9AF /* RegisterForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterForm.swift; sourceTree = "<group>"; };
+		C43C5C162D42C5CA0026A9AF /* Glow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Glow.swift; sourceTree = "<group>"; };
+		C43C5C172D42C5CA0026A9AF /* Timeline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timeline.swift; sourceTree = "<group>"; };
+		C43C5C192D42C5CA0026A9AF /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
+		C43C5C1C2D42C5CA0026A9AF /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
+		C43C5C1D2D42C5CA0026A9AF /* ModelName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelName.swift; sourceTree = "<group>"; };
+		C43C5C1E2D42C5CA0026A9AF /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		C43C5C1F2D42C5CA0026A9AF /* TimeFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeFormatter.swift; sourceTree = "<group>"; };
+		C43C5C202D42C5CA0026A9AF /* VDimService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VDimService.swift; sourceTree = "<group>"; };
+		C43C5C222D42C5CA0026A9AF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		C43C5C242D42C5CA0026A9AF /* thread.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = thread.json; sourceTree = "<group>"; };
+		C43C5C252D42C5CA0026A9AF /* threads.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = threads.json; sourceTree = "<group>"; };
+		C43C5C272D42C5CA0026A9AF /* AlimamaShuHeiTi-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AlimamaShuHeiTi-Bold.otf"; sourceTree = "<group>"; };
+		C43C5C292D42C5CA0026A9AF /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		C43C5C2A2D42C5CA0026A9AF /* LoginView .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoginView .swift"; sourceTree = "<group>"; };
+		C43C5C2B2D42C5CA0026A9AF /* MusicView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicView.swift; sourceTree = "<group>"; };
+		C43C5C2C2D42C5CA0026A9AF /* OldHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OldHomeView.swift; sourceTree = "<group>"; };
+		C43C5C2D2D42C5CA0026A9AF /* PostEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostEditorView.swift; sourceTree = "<group>"; };
+		C43C5C2E2D42C5CA0026A9AF /* SectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionView.swift; sourceTree = "<group>"; };
+		C43C5C2F2D42C5CA0026A9AF /* UserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
+		C43C5C312D42C5CA0026A9AF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C43C5C322D42C5CA0026A9AF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		C43C5C332D42C5CA0026A9AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C43C5C342D42C5CA0026A9AF /* vdimApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = vdimApp.swift; sourceTree = "<group>"; };
 		C46FC4452D2A7AD900007D89 /* vdim.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = vdim.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
-
-/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		C46D98532D3398830084E738 /* Exceptions for "vdim" folder in "vdim" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				Debug/AppConstantsExample.swift,
-				Info.plist,
-			);
-			target = C46FC4442D2A7AD900007D89 /* vdim */;
-		};
-/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
-
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		C46FC4472D2A7AD900007D89 /* vdim */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				C46D98532D3398830084E738 /* Exceptions for "vdim" folder in "vdim" target */,
-			);
-			path = vdim;
-			sourceTree = "<group>";
-		};
-/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		C46FC4422D2A7AD900007D89 /* Frameworks */ = {
@@ -52,10 +85,117 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C43C5C0F2D42C5CA0026A9AF /* Home */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		C43C5C152D42C5CA0026A9AF /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				C43C5C102D42C5CA0026A9AF /* FormInputs.swift */,
+				C43C5C112D42C5CA0026A9AF /* LoginContent.swift */,
+				C43C5C122D42C5CA0026A9AF /* LoginForm.swift */,
+				C43C5C132D42C5CA0026A9AF /* PasswordInput.swift */,
+				C43C5C142D42C5CA0026A9AF /* RegisterForm.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		C43C5C182D42C5CA0026A9AF /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				C43C5C0F2D42C5CA0026A9AF /* Home */,
+				C43C5C152D42C5CA0026A9AF /* Login */,
+				C43C5C162D42C5CA0026A9AF /* Glow.swift */,
+				C43C5C172D42C5CA0026A9AF /* Timeline.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		C43C5C1B2D42C5CA0026A9AF /* Debug */ = {
+			isa = PBXGroup;
+			children = (
+				C43C5C192D42C5CA0026A9AF /* AppConstants.swift */,
+			);
+			path = Debug;
+			sourceTree = "<group>";
+		};
+		C43C5C212D42C5CA0026A9AF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C43C5C1C2D42C5CA0026A9AF /* ColorExtension.swift */,
+				C43C5C1D2D42C5CA0026A9AF /* ModelName.swift */,
+				C43C5C1E2D42C5CA0026A9AF /* NetworkManager.swift */,
+				C43C5C1F2D42C5CA0026A9AF /* TimeFormatter.swift */,
+				C43C5C202D42C5CA0026A9AF /* VDimService.swift */,
+			);
+			path = Frameworks;
+			sourceTree = "<group>";
+		};
+		C43C5C232D42C5CA0026A9AF /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				C43C5C222D42C5CA0026A9AF /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		C43C5C262D42C5CA0026A9AF /* Mock Data */ = {
+			isa = PBXGroup;
+			children = (
+				C43C5C242D42C5CA0026A9AF /* thread.json */,
+				C43C5C252D42C5CA0026A9AF /* threads.json */,
+			);
+			path = "Mock Data";
+			sourceTree = "<group>";
+		};
+		C43C5C282D42C5CA0026A9AF /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C43C5C262D42C5CA0026A9AF /* Mock Data */,
+				C43C5C272D42C5CA0026A9AF /* AlimamaShuHeiTi-Bold.otf */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		C43C5C302D42C5CA0026A9AF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C43C5C292D42C5CA0026A9AF /* HomeView.swift */,
+				C43C5C2A2D42C5CA0026A9AF /* LoginView .swift */,
+				C43C5C2B2D42C5CA0026A9AF /* MusicView.swift */,
+				C43C5C2C2D42C5CA0026A9AF /* OldHomeView.swift */,
+				C43C5C2D2D42C5CA0026A9AF /* PostEditorView.swift */,
+				C43C5C2E2D42C5CA0026A9AF /* SectionView.swift */,
+				C43C5C2F2D42C5CA0026A9AF /* UserView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C43C5C352D42C5CA0026A9AF /* vdim */ = {
+			isa = PBXGroup;
+			children = (
+				C43C5C182D42C5CA0026A9AF /* Components */,
+				C43C5C1B2D42C5CA0026A9AF /* Debug */,
+				C43C5C212D42C5CA0026A9AF /* Frameworks */,
+				C43C5C232D42C5CA0026A9AF /* Preview Content */,
+				C43C5C282D42C5CA0026A9AF /* Resources */,
+				C43C5C302D42C5CA0026A9AF /* Views */,
+				C43C5C312D42C5CA0026A9AF /* Assets.xcassets */,
+				C43C5C322D42C5CA0026A9AF /* ContentView.swift */,
+				C43C5C332D42C5CA0026A9AF /* Info.plist */,
+				C43C5C342D42C5CA0026A9AF /* vdimApp.swift */,
+			);
+			path = vdim;
+			sourceTree = "<group>";
+		};
 		C46FC43C2D2A7AD900007D89 = {
 			isa = PBXGroup;
 			children = (
-				C46FC4472D2A7AD900007D89 /* vdim */,
+				C43C5C352D42C5CA0026A9AF /* vdim */,
 				C46FC4462D2A7AD900007D89 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -82,9 +222,6 @@
 			buildRules = (
 			);
 			dependencies = (
-			);
-			fileSystemSynchronizedGroups = (
-				C46FC4472D2A7AD900007D89 /* vdim */,
 			);
 			name = vdim;
 			packageProductDependencies = (
@@ -139,6 +276,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C43C5C362D42C5CA0026A9AF /* Preview Assets.xcassets in Resources */,
+				C43C5C372D42C5CA0026A9AF /* thread.json in Resources */,
+				C43C5C382D42C5CA0026A9AF /* threads.json in Resources */,
+				C43C5C392D42C5CA0026A9AF /* AlimamaShuHeiTi-Bold.otf in Resources */,
+				C43C5C3A2D42C5CA0026A9AF /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -149,6 +291,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C43C5C3C2D42C5CA0026A9AF /* FormInputs.swift in Sources */,
+				C43C5C3D2D42C5CA0026A9AF /* LoginContent.swift in Sources */,
+				C43C5C3E2D42C5CA0026A9AF /* LoginForm.swift in Sources */,
+				C43C5C3F2D42C5CA0026A9AF /* PasswordInput.swift in Sources */,
+				C43C5C402D42C5CA0026A9AF /* RegisterForm.swift in Sources */,
+				C43C5C412D42C5CA0026A9AF /* Glow.swift in Sources */,
+				C43C5C422D42C5CA0026A9AF /* Timeline.swift in Sources */,
+				C43C5C432D42C5CA0026A9AF /* AppConstants.swift in Sources */,
+				C43C5C452D42C5CA0026A9AF /* ColorExtension.swift in Sources */,
+				C43C5C462D42C5CA0026A9AF /* ModelName.swift in Sources */,
+				C43C5C472D42C5CA0026A9AF /* NetworkManager.swift in Sources */,
+				C43C5C482D42C5CA0026A9AF /* TimeFormatter.swift in Sources */,
+				C43C5C492D42C5CA0026A9AF /* VDimService.swift in Sources */,
+				C43C5C4A2D42C5CA0026A9AF /* HomeView.swift in Sources */,
+				C43C5C4B2D42C5CA0026A9AF /* LoginView .swift in Sources */,
+				C43C5C4C2D42C5CA0026A9AF /* MusicView.swift in Sources */,
+				C43C5C4D2D42C5CA0026A9AF /* OldHomeView.swift in Sources */,
+				C43C5C4E2D42C5CA0026A9AF /* PostEditorView.swift in Sources */,
+				C43C5C4F2D42C5CA0026A9AF /* SectionView.swift in Sources */,
+				C43C5C502D42C5CA0026A9AF /* UserView.swift in Sources */,
+				C43C5C512D42C5CA0026A9AF /* ContentView.swift in Sources */,
+				C43C5C522D42C5CA0026A9AF /* vdimApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
