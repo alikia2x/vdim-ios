@@ -27,7 +27,7 @@ struct LoginFormBasicInput: View {
                 TextField(
                     "", text: $userAuth.email,
                     prompt: Text(prompt).foregroundColor(
-                        Color(.loginFormTextFieldPlaceholder))
+                        Color("LoginFormTextFieldPlaceholder"))
                 )
                 .padding(12)
                 .background(
@@ -40,7 +40,7 @@ struct LoginFormBasicInput: View {
                 TextField(
                     "", text: $userAuth.username,
                     prompt: Text(prompt).foregroundColor(
-                        Color(.loginFormTextFieldPlaceholder))
+                        Color("LoginFormTextFieldPlaceholder"))
                 )
                 .padding(12)
                 .background(
@@ -53,7 +53,7 @@ struct LoginFormBasicInput: View {
                 TextField(
                     "", text: $userAuth.username,
                     prompt: Text(prompt).foregroundColor(
-                        Color(.loginFormTextFieldPlaceholder))
+                        Color("LoginFormTextFieldPlaceholder"))
                 )
                 .padding(12)
                 .background(

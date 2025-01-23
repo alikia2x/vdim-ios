@@ -28,7 +28,7 @@ struct PasswordInput: View {
                         prompt:
                             Text(showStrength ? "设置密码…" : "输入密码")
                             .foregroundColor(
-                                Color(.loginFormTextFieldPlaceholder))
+                                Color("LoginFormTextFieldPlaceholder"))
                     )
                     .padding(.trailing, 40)
                     .frame(maxWidth: .infinity, maxHeight: 48)
@@ -44,7 +44,7 @@ struct PasswordInput: View {
                     SecureField(
                         "", text: $password,
                         prompt: Text(showStrength ? "设置密码…" : "输入密码").foregroundColor(
-                            Color(.loginFormTextFieldPlaceholder))
+                            Color("LoginFormTextFieldPlaceholder"))
                     )
                     .padding(.trailing, 40)
                     .frame(maxWidth: .infinity, maxHeight: 48)

@@ -17,7 +17,7 @@ struct LoginForm: View {
            TextField(
                "", text: $userAuth.username,
                prompt: Text("输入用户名").foregroundColor(
-                   Color(.loginFormTextFieldPlaceholder))
+                   Color("LoginFormTextFieldPlaceholder"))
            )
            .padding(12)
            .background(

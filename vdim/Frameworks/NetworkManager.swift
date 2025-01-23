@@ -35,6 +35,12 @@ struct UserLite: Codable {
     let signature: String?      // 签名
 }
 
+struct ThreadsResponse: Codable {
+    let code: Int
+    let message: String
+    let data: [Post]
+}
+
 class NetworkManager: ObservableObject {
     private var provider = MoyaProvider<VDimService>()
     @Published var threads: [Post] = []
@@ -44,9 +50,10 @@ class NetworkManager: ObservableObject {
             switch result {
             case let .success(response):
                 do {
-                    let threads = try JSONDecoder().decode([Post].self, from: response.data)
+                    let res = try JSONDecoder().decode(ThreadsResponse.self, from: response.data)
                     DispatchQueue.main.async {
-                        self.threads = threads
+                        print(res.code)
+                        self.threads = res.data
                     }
                 } catch {
                     print("Error decoding threads: \(error)")

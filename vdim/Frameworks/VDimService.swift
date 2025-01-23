@@ -28,7 +28,7 @@ extension BaseTargetType {
         case .real:
             return URL(string: "https://api.lty.fan")!
         case .mock:
-            return URL(string: "https://apifoxmock.com/m1/5782624-5466975-default/v1")!
+            return URL(string: "https://apifoxmock.com/m1/5782624-5466975-default")!
         }
     }
 }
