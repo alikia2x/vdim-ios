@@ -6,6 +6,12 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		C461EBBA2D3FF0850080FAAF /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = C461EBB92D3FF0850080FAAF /* SDWebImageSwiftUI */; };
+		C47B31B62D3AD6E000D623E7 /* zxcvbn in Frameworks */ = {isa = PBXBuildFile; productRef = C47B31B52D3AD6E000D623E7 /* zxcvbn */; };
+		C4F554652D3D115F001B4A15 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = C4F554642D3D115F001B4A15 /* Moya */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		C46FC4452D2A7AD900007D89 /* vdim.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = vdim.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -14,6 +20,7 @@
 		C46D98532D3398830084E738 /* Exceptions for "vdim" folder in "vdim" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
+				Debug/AppConstantsExample.swift,
 				Info.plist,
 			);
 			target = C46FC4442D2A7AD900007D89 /* vdim */;
@@ -36,6 +43,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C461EBBA2D3FF0850080FAAF /* SDWebImageSwiftUI in Frameworks */,
+				C4F554652D3D115F001B4A15 /* Moya in Frameworks */,
+				C47B31B62D3AD6E000D623E7 /* zxcvbn in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +88,9 @@
 			);
 			name = vdim;
 			packageProductDependencies = (
+				C47B31B52D3AD6E000D623E7 /* zxcvbn */,
+				C4F554642D3D115F001B4A15 /* Moya */,
+				C461EBB92D3FF0850080FAAF /* SDWebImageSwiftUI */,
 			);
 			productName = vdim;
 			productReference = C46FC4452D2A7AD900007D89 /* vdim.app */;
@@ -106,6 +119,11 @@
 			);
 			mainGroup = C46FC43C2D2A7AD900007D89;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				C47B31B42D3AD6DF00D623E7 /* XCRemoteSwiftPackageReference "zxcvbn-swift" */,
+				C499C3752D3BC444001629BB /* XCRemoteSwiftPackageReference "Moya" */,
+				C461EBB82D3FF0850080FAAF /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = C46FC4462D2A7AD900007D89 /* Products */;
 			projectDirPath = "";
@@ -189,7 +207,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -246,7 +264,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -263,7 +281,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"vdim/Preview Content\"";
 				DEVELOPMENT_TEAM = 5357GH898G;
 				ENABLE_PREVIEWS = YES;
@@ -277,18 +295,22 @@
 				INFOPLIST_KEY_UIStatusBarHidden = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = fan.lty.i;
+				MARKETING_VERSION = 0.5.0;
+				PRODUCT_BUNDLE_IDENTIFIER = fan.lty.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -299,7 +321,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"vdim/Preview Content\"";
 				DEVELOPMENT_TEAM = 5357GH898G;
 				ENABLE_PREVIEWS = YES;
@@ -313,18 +335,22 @@
 				INFOPLIST_KEY_UIStatusBarHidden = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = fan.lty.i;
+				MARKETING_VERSION = 0.5.0;
+				PRODUCT_BUNDLE_IDENTIFIER = fan.lty.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -350,6 +376,51 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C461EBB82D3FF0850080FAAF /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.1.3;
+			};
+		};
+		C47B31B42D3AD6DF00D623E7 /* XCRemoteSwiftPackageReference "zxcvbn-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/DeVitoC/zxcvbn-swift";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+		C499C3752D3BC444001629BB /* XCRemoteSwiftPackageReference "Moya" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Moya/Moya.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 15.0.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C461EBB92D3FF0850080FAAF /* SDWebImageSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C461EBB82D3FF0850080FAAF /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
+			productName = SDWebImageSwiftUI;
+		};
+		C47B31B52D3AD6E000D623E7 /* zxcvbn */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C47B31B42D3AD6DF00D623E7 /* XCRemoteSwiftPackageReference "zxcvbn-swift" */;
+			productName = zxcvbn;
+		};
+		C4F554642D3D115F001B4A15 /* Moya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C499C3752D3BC444001629BB /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = Moya;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = C46FC43D2D2A7AD900007D89 /* Project object */;
 }

@@ -1,1 +1,5 @@
 buildServer.json
+vdim/Debug/AppConstants.swift
+.idea
+.fleet
+.DS_Store

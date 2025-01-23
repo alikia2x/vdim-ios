@@ -1,100 +1,183 @@
+import SDWebImageSwiftUI
 import SwiftUI
 
-struct HomeView: View {
-    @State private var searchText = ""
-    @State private var selectedTab = 0
-    @State private var showPostEditor = false
-
-    private let tabs = ["推荐", "热门", "最新", "关注", "收藏"]
-    private let tabIcons = [
-        "sparkles", "flame",
-        "clock.arrow.trianglehead.counterclockwise.rotate.90", "person", "star",
-    ]
-
+private struct Background: View {
     var body: some View {
-        NavigationView {
-            VStack(spacing: 16) {
-                // 顶栏：搜索框+发帖按钮
-                HStack {
-                    TextField(
-                        "搜索...",
-                        text: $searchText,
-                        prompt: Text("搜索").foregroundColor(.gray)
-                    )
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 10)
-                            .stroke(Color.gray)
-                    )
-
-                    Button(action: {
-                        showPostEditor = true
-                    }) {
-                        Image(systemName: "plus")
-                            .padding(8)
-                            .background(Color.accentColor)
-                            .foregroundColor(.white)
-                            .cornerRadius(8)
-                    }
-                }
-                .padding(.horizontal)
-                .sheet(isPresented: $showPostEditor) {
-                    PostEditorView()
-                }
-
-                // 横向滚动tab
-                ScrollView(.horizontal, showsIndicators: false) {
-                    HStack(spacing: 12) {
-                        ForEach(Array(tabs.enumerated()), id: \.offset) {
-                            index, tab in
-                            Button(
-                                action: {
-                                    selectedTab = index
-                                }
-                            ) {
-                                Label(tab, systemImage: tabIcons[index])
-                                    .padding(.vertical, 8)
-                                    .padding(.horizontal, 16)
-                                    .background(
-                                        selectedTab == index
-                                        ? Color.accentColor : Color.secondary
-                                    )
-                                    .foregroundColor(.white)
-                                    .cornerRadius(20)
-                            }
-                        }
-                    }
-                    .padding(.horizontal)
-                }
-
-                // 内容区域
-                Group {
-                    switch selectedTab {
-                    case 0:
-                        Text("推荐内容")
-                    case 1:
-                        Text("热门内容")
-                    case 2:
-                        Text("最新内容")
-                    case 3:
-                        Text("关注内容")
-                    case 4:
-                        Text("收藏内容")
-                    default:
-                        EmptyView()
-                    }
-                }
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
-
-                Spacer()
-            }
-            .padding(.top)
+        ZStack {
+            Color.black
+                .edgesIgnoringSafeArea(.all)
+                .frame(height: 72)
+            Image("HomeHeader")
+                .resizable()
+                .aspectRatio(contentMode: .fill)
+                .frame(height: 72)
+                .offset(y: -40)
+                .mask(
+                    Rectangle()
+                        .ignoresSafeArea()
+                )
+            LinearGradient(
+                gradient: Gradient(
+                    colors: [
+                        Color(hex: "#2A294DC0"),
+                        Color(.white).opacity(0),
+                    ]
+                ),
+                startPoint: .bottom,
+                endPoint: .top)
         }
     }
 }
 
-struct HomeView_Previews: PreviewProvider {
-    static var previews: some View {
-        HomeView()
+struct AvatarView: View {
+    var url: String
+    var size: CGFloat
+
+    public var body: some View {
+        WebImage(url: URL(string: url), options: [.refreshCached, .fromLoaderOnly]) { image in
+            image.resizable()
+                .frame(width: size, height: size)
+                .scaledToFill()
+                .clipShape(Circle())
+        } placeholder: {
+            Image(systemName: "person")
+                .foregroundColor(.primary)
+                .font(.system(size: size / 2))
+                .frame(width: size, height: size)
+                .background(
+                    .thinMaterial,
+                    in: Circle()
+                )
+        }
+        .frame(width: size, height: size)
     }
+
+    // Initializer
+    public init(url: String, size: CGFloat) {
+        self.url = url
+        self.size = size
+    }
+}
+
+private struct SearchBar: View {
+    @Binding var searchText: String
+
+    var body: some View {
+        TextField(
+            "", text: $searchText,
+            prompt: Text("搜索")
+                .foregroundColor(Color("HomepageSearchPlaceholder"))
+        )
+        .foregroundColor(.white)
+        .padding(.leading, 8)
+        .frame(height: 32)
+        .background(
+            .ultraThinMaterial,
+            in: RoundedRectangle(cornerRadius: 9)
+        )
+    }
+}
+
+private struct MessageButton: View {
+    var body: some View {
+        Button {
+            print("message button clicked")
+        } label: {
+            Image(systemName: "envelope")
+                .font(.system(size: 18))
+                .foregroundColor(.white)
+                .frame(width: 32, height: 32)
+        }
+        .background(
+            .ultraThinMaterial,
+            in: RoundedRectangle(cornerRadius: 9)
+        )
+    }
+}
+
+private struct TopBar: View {
+    @Binding var searchText: String
+
+    var body: some View {
+        HStack {
+            AvatarView(url: HomeViewPreviewAvatarURL, size: 40)
+            SearchBar(searchText: $searchText)
+            MessageButton()
+        }
+        .padding(.horizontal, 12)
+        .ignoresSafeArea(edges: .vertical)
+    }
+}
+
+private struct TabView: View {
+    @Binding var selectedTab: Int
+    private let tabs = ["推荐", "热门", "最新", "关注", "收藏"]
+
+    var body: some View {
+        ScrollView(.horizontal, showsIndicators: false) {
+            HStack(alignment: .center, spacing: 24) {
+                ForEach(Array(tabs.enumerated()), id: \.offset) { index, tab in
+                    Button(action: {
+                        selectedTab = index
+                    }) {
+                        VStack {
+                            Spacer()
+                            Text(tab)
+                                .foregroundColor(
+                                    selectedTab == index
+                                        ? Color.accentColor
+                                        : Color.primary.opacity(0.8)
+                                )
+                            Spacer()
+                        }
+                        .padding(.vertical, 8)
+                    }
+                }
+            }
+            .padding(.horizontal, 20)
+        }
+    }
+}
+
+struct HomeView: View {
+    @State private var searchText = ""
+    @State private var selectedTab = 2
+
+    var body: some View {
+        GeometryReader { geo in
+            VStack(alignment: .leading, spacing: 0) {
+                ZStack {
+                    Background()
+                    TopBar(searchText: $searchText)
+                }
+                VStack(spacing: 0) {
+                    TabView(selectedTab: $selectedTab)
+                        .frame(width: geo.size.width, height: 40)
+                        .clipped()
+
+                    Timeline()
+                        .frame(
+                            width: geo.size.width, height: geo.size.height - 112
+                        )
+                        .mask {
+                            LinearGradient(
+                                gradient: Gradient(stops: [
+                                    .init(color: .clear, location: 0.0),
+                                    .init(color: .black, location: 0.03),
+                                ]),
+                                startPoint: .top,
+                                endPoint: .bottom
+                            )
+                        }
+                        .offset(y: -6)
+
+                }
+                .background(Color("HomepageBackground"))
+            }
+        }
+        .ignoresSafeArea(edges: .bottom)
+    }
+}
+#Preview {
+    HomeView()
 }
