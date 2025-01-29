@@ -36,6 +36,7 @@
 		C43C5C522D42C5CA0026A9AF /* vdimApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43C5C342D42C5CA0026A9AF /* vdimApp.swift */; };
 		C461EBBA2D3FF0850080FAAF /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = C461EBB92D3FF0850080FAAF /* SDWebImageSwiftUI */; };
 		C47B31B62D3AD6E000D623E7 /* zxcvbn in Frameworks */ = {isa = PBXBuildFile; productRef = C47B31B52D3AD6E000D623E7 /* zxcvbn */; };
+		C4F10ED82D4689B800F635C4 /* PostControls.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F10ED72D4689B500F635C4 /* PostControls.swift */; };
 		C4F554652D3D115F001B4A15 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = C4F554642D3D115F001B4A15 /* Moya */; };
 /* End PBXBuildFile section */
 
@@ -69,6 +70,7 @@
 		C43C5C332D42C5CA0026A9AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C43C5C342D42C5CA0026A9AF /* vdimApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = vdimApp.swift; sourceTree = "<group>"; };
 		C46FC4452D2A7AD900007D89 /* vdim.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = vdim.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C4F10ED72D4689B500F635C4 /* PostControls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostControls.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,8 @@
 		C43C5C0F2D42C5CA0026A9AF /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				C4F10ED72D4689B500F635C4 /* PostControls.swift */,
+				C43C5C172D42C5CA0026A9AF /* Timeline.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -110,7 +114,6 @@
 				C43C5C0F2D42C5CA0026A9AF /* Home */,
 				C43C5C152D42C5CA0026A9AF /* Login */,
 				C43C5C162D42C5CA0026A9AF /* Glow.swift */,
-				C43C5C172D42C5CA0026A9AF /* Timeline.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -126,6 +129,7 @@
 		C43C5C212D42C5CA0026A9AF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C454D54F2D4A2A56002A535B /* RichText */,
 				C43C5C1C2D42C5CA0026A9AF /* ColorExtension.swift */,
 				C43C5C1D2D42C5CA0026A9AF /* ModelName.swift */,
 				C43C5C1E2D42C5CA0026A9AF /* NetworkManager.swift */,
@@ -190,6 +194,13 @@
 				C43C5C342D42C5CA0026A9AF /* vdimApp.swift */,
 			);
 			path = vdim;
+			sourceTree = "<group>";
+		};
+		C454D54F2D4A2A56002A535B /* RichText */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = RichText;
 			sourceTree = "<group>";
 		};
 		C46FC43C2D2A7AD900007D89 = {
@@ -293,6 +304,7 @@
 			files = (
 				C43C5C3C2D42C5CA0026A9AF /* FormInputs.swift in Sources */,
 				C43C5C3D2D42C5CA0026A9AF /* LoginContent.swift in Sources */,
+				C4F10ED82D4689B800F635C4 /* PostControls.swift in Sources */,
 				C43C5C3E2D42C5CA0026A9AF /* LoginForm.swift in Sources */,
 				C43C5C3F2D42C5CA0026A9AF /* PasswordInput.swift in Sources */,
 				C43C5C402D42C5CA0026A9AF /* RegisterForm.swift in Sources */,
