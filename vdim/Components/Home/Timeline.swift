@@ -107,6 +107,16 @@ extension ViewController: UIScrollViewDelegate {
     }
 }
 
+struct TimeIndicator: View {
+    let timestamp: Int
+    var body: some View {
+        Text(formatRelativeDate(timestamp))
+            .foregroundStyle(.primary).opacity(0.8)
+            .font(.footnote)
+    }
+}
+
+
 struct Timeline: View {
     @StateObject private var networkManager = NetworkManager()
     var body: some View {
@@ -117,17 +127,20 @@ struct Timeline: View {
                     HStack {
                         VStack (alignment: .leading, spacing: 14){
                             HStack {
-                                AvatarView(url: thread.author.avatar, size: 36)
-                                VStack (alignment: .leading, spacing: 6){
+                                AvatarView(url: thread.author.avatar, size: 40)
+                                VStack (alignment: .leading, spacing: 4){
                                     Text(thread.author.name)
-                                        .font(.system(size: 16))
-                                    // TODO: Compiler is unable to typ-check in reasonable time;
-//                                    Text(formatRelativeDate(thread.createdAt))
-//                                        .font(.system(size: 13))
-//                                        .foregroundStyle(.subheadline)
+                                        .font(.callout)
+                                        .fontWeight(.medium)
+                                    TimeIndicator(timestamp: thread.createdAt)
                                 }
                             }
                             Text(thread.title)
+                                .font(.title3)
+                                .fontWeight(.semibold)
+                            Text(thread.content)
+                                .lineLimit(2)
+                            PostControls(post: thread)
                         }
                         Spacer()
                     }

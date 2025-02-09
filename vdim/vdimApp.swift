@@ -48,9 +48,9 @@ class AppDelegate: NSObject, UIApplicationDelegate {
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil
     ) -> Bool {
         // for injecting response to debug
-        // let customDelegate = CustomSessionDelegate()
-        // let customSession = URLSession(configuration: .default, delegate: customDelegate, delegateQueue: nil)
-        // SDWebImageDownloader.shared.setValue(customSession, forKey: "session")
+//         let customDelegate = CustomSessionDelegate()
+//         let customSession = URLSession(configuration: .default, delegate: customDelegate, delegateQueue: nil)
+//         SDWebImageDownloader.shared.setValue(customSession, forKey: "session")
 
         let requestModifier = SDWebImageDownloaderRequestModifier { (request) -> URLRequest? in
             // Check if the URL path starts with "/uc_server"
@@ -61,18 +61,14 @@ class AppDelegate: NSObject, UIApplicationDelegate {
                 let appVersion = UIApplication.appVersion ?? "N/A"
                 let modelName = UIDevice.modelName
                 let userAgent = "LtyfansApp/\(appVersion)(iOS;\(systemVersion);\(modelName)) Build/\(buildVersion);CreatedAt/20250110"
-                print(userAgent)
+
                 mutableRequest.setValue(
                     userAgent,
                     forHTTPHeaderField: "user-agent"
                 )
                 mutableRequest.setValue(
-                    "https://api.lty.fan",
+                    "https://api.lty.fan/",
                     forHTTPHeaderField: "referer"
-                )
-                mutableRequest.setValue(
-                    "fan.lty.ios",
-                    forHTTPHeaderField: "package-name"
                 )
 
                 return mutableRequest
