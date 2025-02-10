@@ -26,7 +26,7 @@
 		C43C5C482D42C5CA0026A9AF /* TimeFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43C5C1F2D42C5CA0026A9AF /* TimeFormatter.swift */; };
 		C43C5C492D42C5CA0026A9AF /* VDimService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43C5C202D42C5CA0026A9AF /* VDimService.swift */; };
 		C43C5C4A2D42C5CA0026A9AF /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43C5C292D42C5CA0026A9AF /* HomeView.swift */; };
-		C43C5C4B2D42C5CA0026A9AF /* LoginView .swift in Sources */ = {isa = PBXBuildFile; fileRef = C43C5C2A2D42C5CA0026A9AF /* LoginView .swift */; };
+		C43C5C4B2D42C5CA0026A9AF /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43C5C2A2D42C5CA0026A9AF /* LoginView.swift */; };
 		C43C5C4C2D42C5CA0026A9AF /* MusicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43C5C2B2D42C5CA0026A9AF /* MusicView.swift */; };
 		C43C5C4D2D42C5CA0026A9AF /* OldHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43C5C2C2D42C5CA0026A9AF /* OldHomeView.swift */; };
 		C43C5C4E2D42C5CA0026A9AF /* PostEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43C5C2D2D42C5CA0026A9AF /* PostEditorView.swift */; };
@@ -59,7 +59,7 @@
 		C43C5C252D42C5CA0026A9AF /* threads.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = threads.json; sourceTree = "<group>"; };
 		C43C5C272D42C5CA0026A9AF /* AlimamaShuHeiTi-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AlimamaShuHeiTi-Bold.otf"; sourceTree = "<group>"; };
 		C43C5C292D42C5CA0026A9AF /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
-		C43C5C2A2D42C5CA0026A9AF /* LoginView .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoginView .swift"; sourceTree = "<group>"; };
+		C43C5C2A2D42C5CA0026A9AF /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		C43C5C2B2D42C5CA0026A9AF /* MusicView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicView.swift; sourceTree = "<group>"; };
 		C43C5C2C2D42C5CA0026A9AF /* OldHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OldHomeView.swift; sourceTree = "<group>"; };
 		C43C5C2D2D42C5CA0026A9AF /* PostEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostEditorView.swift; sourceTree = "<group>"; };
@@ -169,7 +169,7 @@
 			isa = PBXGroup;
 			children = (
 				C43C5C292D42C5CA0026A9AF /* HomeView.swift */,
-				C43C5C2A2D42C5CA0026A9AF /* LoginView .swift */,
+				C43C5C2A2D42C5CA0026A9AF /* LoginView.swift */,
 				C43C5C2B2D42C5CA0026A9AF /* MusicView.swift */,
 				C43C5C2C2D42C5CA0026A9AF /* OldHomeView.swift */,
 				C43C5C2D2D42C5CA0026A9AF /* PostEditorView.swift */,
@@ -317,7 +317,7 @@
 				C43C5C482D42C5CA0026A9AF /* TimeFormatter.swift in Sources */,
 				C43C5C492D42C5CA0026A9AF /* VDimService.swift in Sources */,
 				C43C5C4A2D42C5CA0026A9AF /* HomeView.swift in Sources */,
-				C43C5C4B2D42C5CA0026A9AF /* LoginView .swift in Sources */,
+				C43C5C4B2D42C5CA0026A9AF /* LoginView.swift in Sources */,
 				C43C5C4C2D42C5CA0026A9AF /* MusicView.swift in Sources */,
 				C43C5C4D2D42C5CA0026A9AF /* OldHomeView.swift in Sources */,
 				C43C5C4E2D42C5CA0026A9AF /* PostEditorView.swift in Sources */,

@@ -11,6 +11,7 @@ import Foundation
 enum VDimService {
     case getThreads(page: Int = 1, useMock: Bool)
     case getThread(tid: Int, useMock: Bool)
+    case login(username: String, password: String, useMock: Bool)
 }
 
 enum ServerEnvironment {
@@ -26,9 +27,9 @@ extension BaseTargetType {
     var baseURL: URL {
         switch environment {
         case .real:
-            return URL(string: "https://api.lty.fan")!
+            return URL(string: realAPIbaseURL)!
         case .mock:
-            return URL(string: "https://apifoxmock.com/m1/5782624-5466975-default")!
+            return URL(string: mockAPIbaseURL)!
         }
     }
 }
@@ -40,6 +41,8 @@ extension VDimService: BaseTargetType {
             return useMock ? .mock : .real
         case .getThread(_, let useMock):
             return useMock ? .mock : .real
+        case.login(_, _, let useMock):
+            return useMock ? .mock : .real
         }
     }
     
@@ -49,6 +52,8 @@ extension VDimService: BaseTargetType {
             return "/threads"
         case .getThread:
             return "/posts"
+        case .login:
+            return "/login"
         }
     }
 
@@ -58,6 +63,8 @@ extension VDimService: BaseTargetType {
             return .get
         case .getThread:
             return .get
+        case .login:
+            return .post
         }
     }
 
@@ -67,6 +74,8 @@ extension VDimService: BaseTargetType {
             return .requestParameters(parameters: ["tid": tid], encoding: URLEncoding.queryString)
         case let .getThreads(page, _):
             return .requestParameters(parameters: ["page": page], encoding: URLEncoding.queryString)
+        case let .login(username, password, _):
+            return .requestJSONEncodable(LoginRequest(username: username, password: password))
         }
     }
 

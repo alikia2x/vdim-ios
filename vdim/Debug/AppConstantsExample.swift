@@ -8,3 +8,5 @@
 import Foundation
 
 let HomeViewPreviewAvatarURL = "https://ui-avatars.com/api/?background=0D8ABC&color=fff&name=%E5%B0%8F%E6%B4%9B"
+let realAPIbaseURL = "https://api.example.com"
+let mockAPIbaseURL = "https://api.example.com"

@@ -35,11 +35,33 @@ struct UserLite: Codable {
     let signature: String?      // 签名
 }
 
-struct ThreadsResponse: Codable {
+struct GenericResponse<T: Codable>: Codable {
     let code: Int
     let message: String
-    let data: [Post]
+    let data: T
 }
+
+typealias PostList = [Post]
+typealias ThreadsResponse = GenericResponse<PostList>
+
+struct LoginRequest: Encodable {
+    var username: String
+    var password: String
+}
+
+struct LoginResponseAuthorityInfo: Codable {
+    let authority: String
+}
+
+struct LoginResponseData: Codable {
+    let accessToken: String
+    let expired: String
+    let refershToken: String
+    let roles: [LoginResponseAuthorityInfo]
+    let username: String
+}
+
+typealias LoginResponse = GenericResponse<LoginResponseData>
 
 class NetworkManager: ObservableObject {
     private var provider = MoyaProvider<VDimService>()
@@ -56,10 +78,25 @@ class NetworkManager: ObservableObject {
                         self.threads = res.data
                     }
                 } catch {
-                    print("Error decoding threads: \(error)")
+                    print("Error decoding threads: \(response.data.base64EncodedString())")
                 }
             case let .failure(error):
                 print("Error fetching threads: \(error)")
+            }
+        }
+    }
+    
+    func logIn(username: String, password: String) {
+        provider.request(.login(username: username, password: password, useMock: true)) { result in
+            switch result {
+            case let .success(response):
+                do {
+                    let res = try JSONDecoder().decode(LoginResponse.self, from: response.data)
+                } catch {
+                    print("Error decoding login res: \(response.data)")
+                }
+            case let .failure(error):
+                print("Error logging in: \(error)")
             }
         }
     }
